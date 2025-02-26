@@ -1,0 +1,151 @@
+.weatherContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.cityName {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out;
+}
+
+.forecastContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 10px;
+  scroll-behavior: smooth;
+}
+
+.forecastContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.forecastContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.forecastContainer::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.dayCard {
+  flex: 1;
+  min-width: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease;
+  animation: slideIn 0.5s ease-out;
+}
+
+.dayCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
+}
+
+.weatherIcon {
+  width: 100px;
+  height: 100px;
+  margin: 15px auto;
+  object-fit: contain;
+  animation: float 3s ease-in-out infinite;
+}
+
+.tempContainer {
+  margin: 20px 0;
+  position: relative;
+}
+
+.temp {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #1a73e8;
+  margin: 10px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  color: #666;
+  text-transform: capitalize;
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.details {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.details p {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #555;
+}
+
+.details i {
+  color: #1a73e8;
+}
+
+/* Loading animation */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #1a73e8;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+/* Error styling */
+.error {
+  background: rgba(255, 82, 82, 0.1);
+  color: #ff5252;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .forecastContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dayCard {
+    width: 100%;
+    min-width: unset;
+    margin-bottom: 15px;
+  }
+
+  .cityName {
+    font-size: 2rem;
+  }
+}
